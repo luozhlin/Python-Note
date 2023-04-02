@@ -9,8 +9,9 @@ def gcd(m,n):
 class Fraction:
 
     def __init__(self, top, bottom=1) -> None:
-        self.num = top
-        self.den = bottom
+        common = gcd(top, bottom)
+        self.num = top // common
+        self.den = bottom // common
 
     def __str__(self) -> str:
         if self.den == 1:
@@ -34,6 +35,12 @@ class Fraction:
         secondnum = self.den * other.num
         
         return firstnum == secondnum
+    
+    def __ne__(self, other) -> bool:  # !=
+        firstnum = self.num * other.den
+        secondnum = self.den * other.num
+        
+        return firstnum != secondnum
     
     def __mul__(self, other):  # *
         if not isinstance(other, Fraction):
@@ -78,6 +85,14 @@ class Fraction:
         else:
             return False 
         
+    def __le__(self, other):  # <=
+        if not isinstance(other, Fraction):
+            other = Fraction(other)
+        if self.num * other.den <= self.den*other.num:
+            return True
+        else:
+            return False 
+        
     def __gt__(self, other):  # >
         if not isinstance(other, Fraction):
             other = Fraction(other)
@@ -85,6 +100,34 @@ class Fraction:
             return True
         else:
             return False 
+        
+    def __ge__(self, other):  # >=
+        if not isinstance(other, Fraction):
+            other = Fraction(other)
+        if self.num * other.den >= self.den*other.num:
+            return True
+        else:
+            return False 
+        
+    def getNum(self):
+        return self.num
+    
+    def getDen(self):
+        return self.den
+
+    def __iadd__(self, other):  # +=
+        if not isinstance(other, Fraction):
+            other = Fraction(other)
+        self.num = self.num * other.den + self.den * other.num
+        self.den = self.den * other.den
+        common = gcd(self.num, self.den)
+        self.num = self.num // common
+        self.den = self.den // common
+        return self
+    
+    def __repr__(self):
+        return "Class for farction"
+    
     
 ###### test
 f1 = Fraction(1,4)
@@ -104,3 +147,6 @@ print(f1-f2+2)
 print(2-f1)
 print(2 > f1)
 print(2 < f1)
+f1 += f2  # f1=f1+f2
+print(f1)
+print(repr(f2))
