@@ -8,4 +8,4 @@ Just some simple examples when learning Python. The website is https://runestone
 
 * Fraction class
 * Inheritance: LogicGate
-
+* MyDies class: can compare == and <
