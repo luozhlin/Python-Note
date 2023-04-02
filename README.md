@@ -7,12 +7,16 @@ Just some simple examples when learning Python. The website is https://runestone
 ### 1.13 Defining class
 
 * Fraction class
-* Inheritance: LogicGate
+* Inheritance: LogicGate.
 
 ## Chapter 2: A proper class
 
 ### 2.1 & 2.2 Implementation of the MSDies class
 
-* MSDies class: can compare == and <
+* MSDies class: can compare == and <.
 
 ## Chapter 3: Analysis
+
+### 3.3 Big-O Notation
+
+* FindMin: two methods to find the minimun in a list.
