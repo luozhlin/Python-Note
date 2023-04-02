@@ -8,4 +8,11 @@ Just some simple examples when learning Python. The website is https://runestone
 
 * Fraction class
 * Inheritance: LogicGate
+
+## Chapter 2: A proper class
+
+### 2.1 & 2.2 Implementation of the MSDies class
+
 * MSDies class: can compare == and <
+
+## Chapter 3: Analysis
